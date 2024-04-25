@@ -1,9 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function SideBar() {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  // Early return
+  if (!isMenuOpen) {
+    return null;
+  }
+
   return (
-    <div className="m-2 w-3/12 ">
-      <ul className="p-2 font-bold" >
+    <div className="m-2 w-[13%] ">
+      <ul className="p-2 font-bold">
         <li className="font-bold py-3">
           <span>icon</span> <span>Home</span>
         </li>
@@ -19,7 +26,7 @@ function SideBar() {
       </ul>
       <hr className="border" />
       <h1 className="font-bold ml-2 py-2">You</h1>
-      <ul className="p-2 font-bold" >
+      <ul className="p-2 font-bold">
         <li className="font-bold py-3">
           <span>icon</span> <span>Home</span>
         </li>
@@ -34,7 +41,7 @@ function SideBar() {
         </li>
       </ul>
       <hr className="border" />
-      <ul className="p-2 font-bold" >
+      <ul className="p-2 font-bold">
         <li className="font-bold py-3">
           <span>icon</span> <span>Home</span>
         </li>
